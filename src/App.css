@@ -44,8 +44,12 @@ textarea {
 
 .DiaryItem {
   background-color: rgb(240, 240, 240);
-  padding-bottom: 10px;
-  padding-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.DiaryItem span {
+  margin-right: 10px;
 }
 
 .DiaryItem .info {
@@ -53,13 +57,16 @@ textarea {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-
 .DiaryItem .date {
   color: gray;
 }
 
 .DiaryItem .content {
-  font-weight: bold;
   margin-bottom: 30px;
   margin-top: 30px;
+  font-weight: bold;
+}
+
+.DiaryItem textarea {
+  padding: 10px;
 }

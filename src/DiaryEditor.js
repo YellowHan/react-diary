@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { DiaryDispatchContext } from "./App";
 
 const DiaryEditor = () => {
+  const { onCreate } = useContext(DiaryDispatchContext);
   const authorInput = useRef();
   const contentInput = useRef();
 
@@ -28,7 +30,13 @@ const DiaryEditor = () => {
       return;
     }
 
+    onCreate(state.author, state.content, state.emotion);
     alert("저장 성공");
+    setState({
+      author: "",
+      content: "",
+      emotion: 1,
+    });
   };
 
   return (
@@ -71,4 +79,4 @@ const DiaryEditor = () => {
   );
 };
 
-export default DiaryEditor;
+export default React.memo(DiaryEditor);
